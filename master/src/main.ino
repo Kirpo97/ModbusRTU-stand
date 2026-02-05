@@ -193,9 +193,18 @@ void setup() {
 }
 
 void loop() {
-  InputA_read();
-  OutputA_read();
-  InputD_read();
-  Output_D_read();
+
+  while(millis() - timer > 1000){   //Посылки модбус раз в 1 секунду
+    
+    InputA_read();
+    OutputA_read();
+    InputD_read();
+    Output_D_read();    
+
+    timer = millis();
+  }
+
+
+
   HTTP.handleClient(); 
 }

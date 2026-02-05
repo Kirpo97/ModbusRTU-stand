@@ -47,5 +47,6 @@ bool DO_write[1];
 
 bool FLAG_SubmitAuntefication = false;
 bool slct1, slct2, slct3, slct4 = false;    
+unsigned long timer;
 
 ModbusRTU mb;  

@@ -1,0 +1,62 @@
+//YWROBOT
+//Compatible with the Arduino IDE 1.0
+//Library version:1.1
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
+#include <Arduino.h>
+#include <ModbusRtu.h>
+
+
+LiquidCrystal_I2C lcd(0x27,16,2);  // set the LCD address to 0x20 for a 16 chars and 2 line display
+
+uint16_t au16data[16] = {
+  3, 1415, 9265, 4, 2, 7182, 28182, 8, 0, 0, 0, 0, 0, 0, 1, 1 };
+
+uint16_t coils[12] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+
+Modbus slave(3,Serial,4);
+
+int hour = 0;
+int min = 0;
+int sec = 0;
+
+void setup()
+{
+  Serial.begin( 9600 ); // baud-rate
+  slave.start();
+
+  lcd.begin();  
+  lcd.backlight();
+
+  char now[] = __TIME__;
+  hour =  atoi(&now[0]);
+  min = atoi(&now[3]);
+  sec = atoi(&now[6]);  
+}
+
+void loop()
+{
+//  lcd.home();
+  slave.poll( au16data, 16);
+//  lcd.print(pool);
+  
+/* 
+    lcd.home(); 
+ 
+  if (sec >= 59){
+    sec = 0;
+    min = min + 1; 
+    if (min >= 59){
+      min = 0;
+      hour = hour + 1;
+      if (hour >= 23) 
+        hour = 0;
+    } 
+  }
+
+
+  lcd.print(String(hour) + " : " + String(min) + " : " + String(sec) + "   ");
+  delay(1000);
+  sec++;
+*/
+}

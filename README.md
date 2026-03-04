@@ -1,4 +1,5 @@
 ModbusRTU-stand
+Стенд для проеверки модбас подключения
 ---
 ![1770112934935](https://github.com/user-attachments/assets/79b323c4-e89a-47c0-883f-58d2e226f430)
 ---
@@ -11,4 +12,5 @@ ModbusRTU-stand
 <img width="1878" height="1055" alt="3" src="https://github.com/user-attachments/assets/fee1dcaa-ae2c-4b92-be8f-8f06ec6e3104" />
 ---
 <img width="1878" height="1055" alt="4" src="https://github.com/user-attachments/assets/dbf66b0a-fafa-41a1-8560-e7a208d52f74" />
+
 ---

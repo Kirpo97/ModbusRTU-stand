@@ -18,10 +18,12 @@ div<img width="1878" height="1055" alt="3" src="https://github.com/user-attachme
 div<img width="1878" height="1055" alt="4" src="https://github.com/user-attachments/assets/dbf66b0a-fafa-41a1-8560-e7a208d52f74" />
 ---
 
-<form method="post" action="/img/PES.svg">
-    <input name="login"/>
-    <input type="submit" value="Войти" />
-</form>
-
-
+<html>
+    <body>
+        <form method="post" action="http://localhost:8080/login.php">
+            <input name="login"/>
+            <input type="submit" value="Войти" />
+        </form>
+    </body>
+</html>
 

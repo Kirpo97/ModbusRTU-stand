@@ -1,29 +1,43 @@
-ModbusRTU-stand
+#ModbusRTU-stand
 ---
-Стенд для проеверки модбас подключения
+**Стенд для проеверки модбас подключения**
+Это демонстрация работы протокола modbusRTU и шаблон для быстрой разработки других проектов, 
+где необходима помехоустойчивая и простая в реализации связь.
+- реализован на esp8266 и arduino
+- для наглядного вывода инфомации подключен 7-ми сегментный 2-х строковый ЖК-дисплей 1602
+- связь между esp и arduino осуществлёна через микросхемы max485 по протоколу rs485
+- для наглядности подключен датчик влажности
+- контроль параметров регистов modbus реализован через web-интерфейс
+- имеется возможность читать данные из аналогового входа arduino, записывать и отображать данные на дисплее через web-интерфейс
+
+1. При подаче питания esp поднимает точку доступа
+2. Через минуту подлючаемся к точке доступа ESP, пароля нет
+3. Заходим в web-браузер на любом доступном устройсте
+4. Вводим в поисовую строку следующий IP - 192.168.10.1
+5. Загрузится страничка, где выводятся ключевые параметры
+6. При нажатии на параметр его можно изменить, установив нужное значение
+\
 ---
-Схема принципиальная электрическая:
-p<img width="1878" height="1055" alt="4" src="/img/PES.svg" />
+=Схема принципиальная электрическая:
+![Схема принципиальная электрическая]<div img width="1878" height="1055" alt="4" src="/img/PES.svg" />
 ---
+=Деманстрация работы / фото:
 ![1770112934935](https://github.com/user-attachments/assets/79b323c4-e89a-47c0-883f-58d2e226f430)
 ---
-div<img width="1878" height="1055" alt="Снимок экрана_2026-02-05_15-12-53" src="https://github.com/user-attachments/assets/28c232a4-8dbf-481b-a954-307992fc7dfa" />
+Начальная страничка:
+![]<img width="1878" height="1055" alt="Снимок экрана_2026-02-05_15-12-53" src="https://github.com/user-attachments/assets/28c232a4-8dbf-481b-a954-307992fc7dfa" />
 ---
-div<img width="1878" height="1055" alt="1" src="https://github.com/user-attachments/assets/25a39036-b114-45a8-9577-1b616d084511" />
+В первом столбце регистры аналогового входа, изменять их по протоколу нельзя, этот регистр 16-битный, на него приходят показания влажности
+![]<img width="1878" height="1055" alt="1" src="https://github.com/user-attachments/assets/25a39036-b114-45a8-9577-1b616d084511" />
 ---
-div<img width="1878" height="1055" alt="2" src="https://github.com/user-attachments/assets/821e5c26-2226-440f-9b62-7fbc65dce4e9" />
+Во втором - 16-битный регистр аналогового выхода, который можно именить, что отобразится на ЖК-дисплее
+![]<img width="1878" height="1055" alt="2" src="https://github.com/user-attachments/assets/821e5c26-2226-440f-9b62-7fbc65dce4e9" />
 ---
-div<img width="1878" height="1055" alt="3" src="https://github.com/user-attachments/assets/fee1dcaa-ae2c-4b92-be8f-8f06ec6e3104" />
+Третий - Дискретный вход, принимает 2 значения, также не изменяется, можно только читать
+![]<img width="1878" height="1055" alt="3" src="https://github.com/user-attachments/assets/fee1dcaa-ae2c-4b92-be8f-8f06ec6e3104" />
 ---
-div<img width="1878" height="1055" alt="4" src="https://github.com/user-attachments/assets/dbf66b0a-fafa-41a1-8560-e7a208d52f74" />
+Четвёртый - Дискредный выход, принимает 2 значения, можно изменять
+![]<img width="1878" height="1055" alt="4" src="https://github.com/user-attachments/assets/dbf66b0a-fafa-41a1-8560-e7a208d52f74" />
 ---
 
-<html>
-    <body>
-        <form method="post" action="http://localhost:8080/login.php">
-            <input name="login"/>
-            <input type="submit" value="Войти" />
-        </form>
-    </body>
-</html>
 
